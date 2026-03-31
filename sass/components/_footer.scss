@@ -1,0 +1,107 @@
+// Variables de couleurs (à mettre dans _variables.scss si besoin)
+$footer-bg: #0b1221; // Bleu très sombre / Noir
+$footer-text: #94a3b8; // Gris bleuté pour le texte secondaire
+$footer-white: #ffffff;
+$laptop: 1024px;
+
+.footer {
+    background-color: $footer-bg;
+    color: $footer-text;
+    padding: 60px 0;
+    font-size: 0.9rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column; // Mobile first : tout en colonne
+        align-items: center;    // Centré
+        text-align: center;
+        gap: 40px;
+
+        @media (min-width: $laptop) {
+            flex-direction: row; // Desktop : en ligne
+            align-items: flex-start;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+
+    &__brand {
+        max-width: 300px;
+        
+        .footer__logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .footer__tagline {
+            margin-bottom: 10px;
+        }
+
+        .footer__copyright {
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        justify-content: center; // Centré mobile
+
+        @media (min-width: $laptop) {
+            justify-content: flex-start; // Gauche desktop
+        }
+
+        a {
+            color: $footer-text;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+
+            &:hover { color: $footer-white; }
+        }
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column; // Mobile
+        gap: 40px;
+        width: 100%;
+
+        @media (min-width: $laptop) {
+            flex-direction: row; // Desktop
+            justify-content: flex-end;
+            gap: 80px;
+        }
+    }
+
+    &__col {
+        h4 {
+            color: $footer-white;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            margin-top: 25px;
+
+            &:first-child { margin-top: 0; }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            
+            li {
+                margin-bottom: 10px;
+                
+                a {
+                    color: $footer-text;
+                    text-decoration: none;
+                    transition: 0.3s;
+
+                    &:hover { color: $footer-white; }
+                }
+            }
+        }
+    }
+}
