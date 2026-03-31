@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Une brève description de votre projet d'intégration.">
     <title>TalkNotes</title>
-    <script src="js/script.js"></script>
     <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="assets/ico/image.png" type="image/x-icon">
 </head>
     
 <body>
@@ -28,13 +28,14 @@
 
             <!-- Desktop Actions (Hidden on mobile) -->
             <div class="navbar__desktop-actions">
-                <a href="#" class="btn btn--login">Login</a>
-                <a href="#" class="btn btn--primary">
+                <a href="login.html" class="btn btn--login">Login</a>
+                <!-- Ajout de l'ID open-popup-desktop pour ouvrir la popup -->
+                <button id="open-popup-desktop" class="btn btn--primary">
                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 448 512" style="vertical-align: -0.125em;">
                         <path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
                     </svg>
                     Get Talknotes +
-                </a>
+                </button>
             </div>
 
             <!-- Trigger Menu Mobile -->
@@ -61,15 +62,16 @@
             </ul>
 
             <div class="mobile-menu__footer">
-                <a href="#" class="btn btn--primary btn--full">
+                <!-- Ajout de l'ID open-popup-mobile pour ouvrir la popup -->
+                <button id="open-popup-mobile" class="btn btn--primary btn--full">
                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 448 512" style="vertical-align: -0.125em;">
                         <path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h306.7L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path>
                     </svg> 
                     Get Talknotes +
-                </a>
+                </button>
 
                 <!-- Bouton Login : Fond clair -->
-                <a href="#" class="btn btn--login btn--full">
+                <a href="login.html" class="btn btn--login btn--full">
                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 320 512" style="vertical-align: -0.125em;">
                         <path fill="currentColor" d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256L73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
                     </svg> 
@@ -81,7 +83,7 @@
     <main>
         <section class="container">
             <div class="style">
-                
+                <!-- Contenu principal -->
             </div>
         </section>
     </main>
@@ -93,11 +95,29 @@
                 <img src="assets/ico/logo-white.svg" alt="TalkNotes Logo" class="footer__logo">
                 <p class="footer__tagline">Turn your thoughts into actionable notes.</p>
                 <p class="footer__copyright">© 2024 - talknotes.io All rights reserved.</p>
+                
+                <!-- Icônes Sociales (SVG) -->
                 <div class="footer__socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/TalkNotesApp" rel="noopener noreferrer" target="_blank" aria-label="Facebook page">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 320 512">
+                            <path fill="currentColor" d="M80 299.3V512h116V299.3h86.5l18-97.8H196v-34.6c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4.4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/TalkNotesApp" rel="noopener noreferrer" target="_blank" aria-label="Twitter account">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 512 512">
+                            <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645c0 138.72-105.583 298.558-298.558 298.558c-59.452 0-114.68-17.219-161.137-47.106c8.447.974 16.568 1.299 25.34 1.299c49.055 0 94.213-16.568 130.274-44.832c-46.132-.975-84.792-31.188-98.112-72.772c6.498.974 12.995 1.624 19.818 1.624c9.421 0 18.843-1.3 27.614-3.573c-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319c-28.264-18.843-46.781-51.005-46.781-87.391c0-19.492 5.197-37.36 14.294-52.954c51.655 63.675 129.3 105.258 216.365 109.807c-1.624-7.797-2.599-15.918-2.599-24.04c0-57.828 46.782-104.934 104.934-104.934c30.213 0 57.502 12.67 76.67 33.137c23.715-4.548 46.456-13.32 66.599-25.34c-7.798 24.366-24.366 44.833-46.132 57.827c21.117-2.273 41.584-8.122 60.426-16.243c-14.292 20.791-32.161 39.308-52.628 54.253"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@TalkNotesApp" rel="noopener noreferrer" target="_blank" aria-label="Youtube Channel">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 576 512">
+                            <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597c-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821c11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@TalkNotesApp" rel="noopener noreferrer" target="_blank" aria-label="Tiktok Account">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="icon" width="1em" height="1em" viewBox="0 0 448 512">
+                            <path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25v178.72A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0h88a121 121 0 0 0 1.86 22.17A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
 
@@ -147,4 +167,99 @@
 
         </div>
     </footer>
+
+    <!-- POPUP UNLOCK TALKNOTES PLUS -->
+    <div id="talknotes-plus-popup" class="popup-overlay">
+        <div class="popup-content">
+            <!-- Bouton fermer -->
+            <button id="close-popup" class="popup-close" aria-label="Fermer la popup">
+                ✕
+            </button>
+
+            <!-- En-tête -->
+            <div class="popup-header">
+                <h2>Unlock TalkNotes Plus</h2>
+                <p>Get unlimited TalkNotes</p>
+            </div>
+
+            <!-- Liste des fonctionnalités -->
+            <div class="popup-features">
+                <div class="feature-item">
+                    <div class="feature-icon text-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 640 512"><path fill="currentColor" d="M0 241.1C0 161 65 96 145.1 96c38.5 0 75.4 15.3 102.6 42.5l72.3 72.2l72.2-72.2C419.5 111.3 456.4 96 494.9 96C575 96 640 161 640 241.1v29.7C640 351 575 416 494.9 416c-38.5 0-75.4-15.3-102.6-42.5L320 301.3l-72.2 72.2c-27.3 27.2-64.2 42.5-102.7 42.5C65 416 0 351 0 270.9v-29.7zM274.7 256l-72.2-72.2c-15.2-15.2-35.9-23.8-57.4-23.8c-44.8 0-81.1 36.3-81.1 81.1v29.7c0 44.8 36.3 81.1 81.1 81.1c21.5 0 42.2-8.5 57.4-23.8zm90.5 0l72.2 72.2c15.2 15.2 35.9 23.8 57.4 23.8c44.8 0 81.1-36.3 81.1-81.1v-29.7c0-44.8-36.3-81.1-81.1-81.1c-21.5 0-42.2 8.5-57.4 23.8L365.3 256z"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Unlimited Notes</h3>
+                        <p>Create as many notes as you want, and get up to 2 hours of recording time per note.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon text-indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M512 256v2.7c-.4 36.5-33.6 61.3-70.1 61.3H344c-26.5 0-48 21.5-48 48c0 3.4.4 6.7 1 9.9c2.1 10.2 6.5 20 10.8 29.9c6.1 13.8 12.1 27.5 12.1 42c0 31.8-21.6 60.7-53.4 62c-3.5.1-7 .2-10.6.2C114.6 512 0 397.4 0 256S114.6 0 256 0s256 114.6 256 256m-384 32a32 32 0 1 0-64 0a32 32 0 1 0 64 0m0-96a32 32 0 1 0 0-64a32 32 0 1 0 0 64m160-96a32 32 0 1 0-64 0a32 32 0 1 0 64 0m96 96a32 32 0 1 0 0-64a32 32 0 1 0 0 64"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Improved styling</h3>
+                        <p>Unlock more styles, create your own styles prompts and more!.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon text-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0zM64 352h128c0 35.3 28.7 64 64 64s64-28.7 64-64h128c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64v-32c0-35.3 28.7-64 64-64m368 104a24 24 0 1 0 0-48a24 24 0 1 0 0 48"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>File upload</h3>
+                        <p>Create notes from your own audio files. Multiple formats supported!</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon text-indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 512 512"><path fill="currentColor" d="m345 39.1l127.8 129.3c52.4 53 52.4 138.2 0 191.2l-112 113.3c-9.3 9.4-24.5 9.5-33.9.2s-9.5-24.5-.2-33.9l111.9-113.3c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6.2-33.9s24.6-9.2 33.9.2zM0 229.5V80c0-26.5 21.5-48 48-48h149.5c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5M144 144a32 32 0 1 0-64 0a32 32 0 1 0 64 0"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Organize Your Notes</h3>
+                        <p>Sort and filter your notes with ease by adding custom tags.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon text-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-2.075 0-3.537-1.463T2 16q0-1.825 1.138-3.187T6 11.1v2.075q-.875.3-1.437 1.075T4 16q0 1.25.875 2.125T7 19t2.125-.875T10 16v-1h5.875q.2-.225.488-.363T17 14.5q.625 0 1.063.438T18.5 16t-.437 1.063T17 17.5q-.35 0-.638-.137T15.876 17H11.9q-.35 1.725-1.713 2.863T7 21m10 0q-1.4 0-2.537-.687T12.675 18.5h2.675q.35.25.775.375T17 19q1.25 0 2.125-.875T20 16t-.875-2.125T17 13q-.5 0-.925.138t-.8.412l-3.05-5.075q-.525-.1-.875-.5T11 7q0-.625.438-1.062T12.5 5.5t1.063.438T14 7v.213q0 .087-.05.212l2.175 3.65q.2-.05.425-.062T17 11q2.075 0 3.538 1.463T22 16t-1.463 3.538T17 21M7 17.5q-.625 0-1.062-.437T5.5 16q0-.55.35-.95t.85-.525l2.35-3.9q-.725-.675-1.138-1.612T7.5 7q0-2.075 1.463-3.537T12.5 2t3.538 1.463T17.5 7h-2q0-1.25-.875-2.125T12.5 4t-2.125.875T9.5 7q0 1.075.65 1.888t1.65 1.037L8.425 15.55q.05.125.063.225T8.5 16q0 .625-.437 1.063T7 17.5"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>Integrations</h3>
+                        <p>Connect Talknotes & Zapier to send your notes anywhere you want!</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon text-indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 448 512"><path fill="currentColor" d="M8 256a56 56 0 1 1 112 0a56 56 0 1 1-112 0m160 0a56 56 0 1 1 112 0a56 56 0 1 1-112 0m216-56a56 56 0 1 1 0 112a56 56 0 1 1 0-112"></path></svg>
+                    </div>
+                    <div class="feature-text">
+                        <h3>WhatsApp Transcriber</h3>
+                        <p>Transcribe WhatsAppp voice messages to text directly in WhatsApp with out bot!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton d'action et texte de confiance -->
+            <div class="popup-action">
+                <button class="btn btn--primary btn--full btn--gradient">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8.5 10.5L9 16l-1.5-2.5L5 12l2.5-1.5L9 8l1.5 2.5L13 12l-2.5 1.5zm6.5 2L15.8 17L15 18.8L14.2 17L12.4 16.2l1.8-.8L15 13.6l.8 1.8l1.8.8l-1.8.8zM17 10.4l-.8-1.8l-1.8-.8l1.8-.8l.8-1.8l.8 1.8l1.8.8l-1.8.8l-.8 1.8z"></path></svg>
+                    Get Talknotes +
+                </button>
+                <p class="trust-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg>
+                    Trusted by +10,000 happy users
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclure le script JavaScript à la fin -->
+    <script src="js/script.js"></script>
 </body>
+</html>
