@@ -1,17 +1,90 @@
 // Variables
 $primary: #6366f1;
-$bg-light: #eef2ff; // Pour le bouton Login
+$bg-light: #eef2ff;
 $text-dark: #1f2937;
+$gray-500: #6b7280;
+$laptop: 1024px;
 
 .navbar {
-    // ... (garder le style de base précédent)
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-sizing: border-box; // Sécurité globale pour la barre
 
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%; 
+        box-sizing: border-box; // Empêche le débordement horizontal
+        padding: 0 2rem; // Aération augmentée sur les côtés (tu peux mettre 3rem si besoin de plus)
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    // Liens Desktop
+    &__desktop-links {
+        display: none; // Caché sur mobile
+
+        @media (min-width: $laptop) {
+            display: flex;
+            gap: 2.5rem;
+            flex-grow: 1; // Permet aux liens de prendre l'espace disponible
+            justify-content: center; // Centre les liens entre le logo et les boutons
+        }
+
+        a {
+            text-decoration: none;
+            color: $gray-500;
+            font-weight: 500;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    // Actions Desktop (Boutons)
+    &__desktop-actions {
+        display: none; // Caché sur mobile
+
+        @media (min-width: $laptop) {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    // Bouton Menu Mobile
     &__mobile-trigger {
         display: flex;
-        @media (min-width: 1024px) { display: none; }
+        align-items: center;
+        gap: 0.5rem;
+        background: white;
+        border: 1px solid #e5e7eb;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: 600;
+
+        @media (min-width: $laptop) {
+            display: none; // Caché sur desktop
+        }
     }
 }
 
+// Menu Mobile (Overlay)
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -22,9 +95,10 @@ $text-dark: #1f2937;
     z-index: 100;
     display: flex;
     flex-direction: column;
-    padding: 20px;
     
-    // Etat caché par défaut
+    box-sizing: border-box; // Empêche le menu de déborder de l'écran
+    padding: 2rem; // Belle aération intérieure sur tous les côtés
+    
     transform: translateX(100%); 
     transition: transform 0.3s ease-in-out;
 
@@ -36,7 +110,15 @@ $text-dark: #1f2937;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 40px;
+        margin-bottom: 3rem; // Aère l'espace sous le logo/bouton close
+    }
+
+    &__close {
+        background: none;
+        border: 1px solid #e5e7eb;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
     }
 
     &__links {
@@ -54,21 +136,43 @@ $text-dark: #1f2937;
     }
 
     &__footer {
-        margin-top: auto; // Pousse les boutons vers le bas
+        margin-top: auto;
         display: flex;
         flex-direction: column;
         gap: 15px;
     }
 }
 
-// Boutons spécifiques au design
+// Styles globaux des boutons
 .btn {
-    &--login {
-        background: $bg-light;
-        color: $primary;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    cursor: pointer;
+    border: none;
+    box-sizing: border-box;
+
+    &:hover { opacity: 0.9; }
+
+    &--primary {
+        background-color: $primary;
+        color: white;
+        gap: 0.5rem; // Espace entre l'icône et le texte
     }
+
+    &--login {
+        background-color: $bg-light;
+        color: $primary;
+        gap: 0.5rem;
+    }
+
     &--full {
         width: 100%;
-        padding: 15px;
+        padding: 1rem;
     }
 }
