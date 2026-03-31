@@ -1,1 +1,191 @@
+// Variables locales pour la popup
+$popup-bg: rgba(0, 0, 0, 0.4); 
+$text-dark: #1f2937;
+$text-gray: #6b7280;
+$blue-icon: #3b82f6; 
+$indigo-icon: #6366f1; 
+$gradient-start: #ec4899; 
+$gradient-end: #8b5cf6;   
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $popup-bg;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.popup-content {
+    background-color: #fafafa;
+    width: 100%;
+    height: 100vh;
+    padding: 2.5rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    // On retire overflow-y: auto ici car on veut que seul le bloc du milieu scrolle
+    overflow: hidden; 
+
+    @media (min-width: 768px) {
+        height: auto;
+        max-height: 90vh;
+        max-width: 600px;
+        border-radius: 1rem;
+        padding: 3rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+}
+
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: $text-gray;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.2s;
+
+    &:hover {
+        color: $text-dark;
+    }
+}
+
+.popup-header {
+    text-align: center;
+    margin-bottom: 1.5rem; // Réduit pour donner plus de place au contenu
+    flex-shrink: 0; // Empêche l'en-tête de se compresser
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(to right, $gradient-start, $gradient-end);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    p {
+        color: #9ca3af;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin: 0;
+    }
+}
+
+// --- LA MODIFICATION EST ICI ---
+.popup-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; 
+    margin-bottom: 1.5rem;
+    border-top: 1px solid rgba(156, 163, 175, 0.2); // Rendu un peu plus subtil
+    border-bottom: 1px solid rgba(156, 163, 175, 0.2); // Ajout d'une bordure en bas pour délimiter
+    padding: 1.5rem 0; // Ajout de padding interne pour l'esthétique
+    
+    // Le secret du scroll interne :
+    overflow-y: auto; // Permet de scroller verticalement si le contenu dépasse
+    flex-grow: 1; // Permet au bloc de prendre tout l'espace disponible entre le header et l'action
+    
+    // Pour une barre de scroll plus jolie (optionnel)
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(156, 163, 175, 0.3);
+        border-radius: 10px;
+    }
+}
+// ------------------------------
+
+.feature-item {
+    display: flex;
+    align-items: center; // Remis sur flex-start pour un meilleur alignement si le texte est long
+    gap: 1rem;
+
+    .feature-icon {
+        flex-shrink: 0;
+        margin-top: 0.25rem; // Ajustement subtil pour aligner avec le titre
+        color: $indigo-icon; 
+    }
+
+    .feature-text {
+        h3 {
+            font-size: 1.05rem; 
+            font-weight: 700;
+            color: $text-dark;
+            margin-bottom: 0.15rem; 
+        }
+
+        p {
+            font-size: 0.9rem; 
+            color: $text-gray;
+            line-height: 1.4;
+            margin: 0;
+        }
+    }
+}
+
+.popup-action {
+    flex-shrink: 0; // Empêche la zone d'action de se compresser
+    text-align: center;
+    padding-top: 0.5rem; // Léger espace au-dessus du bouton
+
+    .btn--gradient {
+        background: linear-gradient(to right, $gradient-start, $gradient-end);
+        border: none;
+        box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.39);
+        font-size: 1.1rem;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white; 
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+            opacity: 1; 
+        }
+    }
+
+    .trust-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        color: $text-gray;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 0;
+
+        svg {
+            color: #6b7280;
+        }
+    }
+}

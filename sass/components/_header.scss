@@ -156,6 +156,12 @@ $laptop: 1024px;
     cursor: pointer;
     border: none;
     box-sizing: border-box;
+    
+    // --- LES AJOUTS POUR NORMALISER LES TAILLES SONT ICI ---
+    font-family: inherit; // Force le bouton à utiliser la même police que le site
+    font-size: 1rem;      // Force la même taille de texte que le lien
+    line-height: 1.5;     // Assure une hauteur de texte identique
+    // --------------------------------------------------------
 
     &:hover { opacity: 0.9; }
 
