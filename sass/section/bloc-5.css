@@ -1,8 +1,4 @@
 @charset "UTF-8";
-.style {
-  font: optional;
-}
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -240,8 +236,4 @@ body {
   .styles__grid {
     grid-template-columns: repeat(1, 1fr);
   }
-}
-h1 {
-  font-size: 2em;
-  color: #333;
-}/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=bloc-5.css.map */
