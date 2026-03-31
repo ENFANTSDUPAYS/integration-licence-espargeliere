@@ -1,5 +1,8 @@
-@use "sass/components/header";
-@use "sass/components/footer";
+@use "./sass/components/footer.scss";
+@use "./sass/components/header.scss";
+@use "./sass/section/bloc-1.scss";
+@use "./sass/section/bloc-2.scss";
+@use "./sass/section/bloc-5.scss";
 @use "sass/base/base";
 @use "sass/pages/login";
 @use "sass/components/talk-notes";
