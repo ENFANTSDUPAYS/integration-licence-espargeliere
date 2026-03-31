@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .navbar {
   position: sticky;
   top: 0;
@@ -261,4 +262,178 @@ body {
 
 button, input, textarea, select {
   font-family: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.faq-section .faq-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+.faq-section .faq-list {
+  text-align: left;
+  margin-bottom: 30px;
+}
+.faq-section .faq-list .faq-item {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.faq-section .faq-list .faq-item summary {
+  padding: 16px 20px;
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.faq-section .faq-list .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-section .faq-list .faq-item summary .chevron::before {
+  content: "⌵";
+  font-weight: bold;
+  transform: rotate(0deg);
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.faq-section .faq-list .faq-item[open] summary .chevron::before {
+  transform: rotate(180deg);
+}
+.faq-section .faq-list .faq-item[open] .content {
+  padding: 0 20px 16px;
+  border-top: 0;
+  color: #6b7280;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.btn-primary {
+  background-color: #ec4899;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: rgb(233.6014851485, 48.8985148515, 140.1237623762);
+}
+.btn-white {
+  background-color: white;
+  color: #ec4899;
+  margin-top: 20px;
+}
+.btn-white:hover {
+  background-color: #f3f4f6;
+}
+.btn .arrow {
+  margin-left: 8px;
+}
+
+.feature-banner {
+  background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+  border-radius: 16px;
+  padding: 60px 40px;
+  color: white;
+  overflow: hidden;
+  margin: 40px auto;
+  max-width: 900px;
+}
+.feature-banner .banner-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+@media (max-width: 768px) {
+  .feature-banner .banner-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.feature-banner .text-side {
+  flex: 0 0 50%;
+}
+.feature-banner .text-side h3 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: white;
+}
+.feature-banner .text-side p {
+  opacity: 0.85;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+.feature-banner .text-side .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 12px 24px;
+  background-color: #ec4899;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.feature-banner .text-side .btn:hover {
+  background-color: rgb(231.202970297, 25.797029703, 127.2475247525);
+  transform: translateY(-2px);
+}
+.feature-banner .text-side .btn .arrow {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.feature-banner .visual-side {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .feature-banner .visual-side {
+    display: none;
+  }
+}
+.feature-banner .visual-side img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
 }/*# sourceMappingURL=main.css.map */

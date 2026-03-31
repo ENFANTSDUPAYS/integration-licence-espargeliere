@@ -1,0 +1,187 @@
+// Variables
+$color-pink: #ec4899;
+$color-purple: #6366f1;
+$color-bg-light: #f9fafb;
+$color-text-dark: #1f2937;
+$border-radius: 8px;
+$transition: all 0.3s ease;
+
+// Reset & Base
+* { box-sizing: border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $color-bg-light;
+  color: $color-text-dark;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Section FAQ
+.faq-section {
+  text-align: center;
+  margin-bottom: 80px;
+
+  .faq-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+  }
+
+  .faq-list {
+    text-align: left;
+    margin-bottom: 30px;
+
+    .faq-item {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: $border-radius;
+      margin-bottom: 12px;
+      
+      summary {
+        padding: 16px 20px;
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        font-size: 0.95rem;
+
+        &::-webkit-details-marker { display: none; }
+        
+        .chevron::before {
+          content: '⌵'; // Remplaçable par un SVG
+          font-weight: bold;
+          transform: rotate(0deg);
+          display: inline-block;
+          transition: $transition;
+        }
+      }
+
+      &[open] {
+        summary .chevron::before { transform: rotate(180deg); }
+        .content { padding: 0 20px 16px; border-top: 0; color: #6b7280; }
+      }
+    }
+  }
+}
+
+// Boutons
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: $transition;
+
+  &-primary {
+    background-color: $color-pink;
+    color: white;
+    &:hover { background-color: darken($color-pink, 5%); }
+  }
+
+  &-white {
+    background-color: white;
+    color: $color-pink;
+    margin-top: 20px;
+    &:hover { background-color: #f3f4f6; }
+  }
+
+  .arrow { margin-left: 8px; }
+}
+
+// Bannière Feature
+.feature-banner {
+  background: linear-gradient(135deg, $color-purple 0%, #4338ca 100%);
+  border-radius: 16px;
+  padding: 60px 40px;
+  color: white;
+  overflow: hidden;
+  margin: 40px auto;
+  max-width: 900px;
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  .text-side {
+    flex: 0 0 50%;
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      line-height: 1.5;
+      font-weight: 700;
+      color: white;
+    }
+    
+    p {
+      opacity: 0.85;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      padding: 12px 24px;
+      background-color: $color-pink;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: $transition;
+
+      &:hover {
+        background-color: darken($color-pink, 10%);
+        transform: translateY(-2px);
+      }
+
+      .arrow {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .visual-side {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
