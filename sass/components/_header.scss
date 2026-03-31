@@ -1,0 +1,74 @@
+// Variables
+$primary: #6366f1;
+$bg-light: #eef2ff; // Pour le bouton Login
+$text-dark: #1f2937;
+
+.navbar {
+    // ... (garder le style de base précédent)
+
+    &__mobile-trigger {
+        display: flex;
+        @media (min-width: 1024px) { display: none; }
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    
+    // Etat caché par défaut
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out;
+
+    &.is-open {
+        transform: translateX(0);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    &__links {
+        list-style: none;
+        padding: 0;
+        li {
+            margin-bottom: 25px;
+            a {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: $text-dark;
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: auto; // Pousse les boutons vers le bas
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+// Boutons spécifiques au design
+.btn {
+    &--login {
+        background: $bg-light;
+        color: $primary;
+    }
+    &--full {
+        width: 100%;
+        padding: 15px;
+    }
+}
